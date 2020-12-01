@@ -1,3 +1,10 @@
 <h1 class="test">Rails チャットアプリ</h1>
 <p>Home#index</p>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<ol>
+  <li><%= link_to "一覧", home_show_path %></li>
+  <li><%= link_to "登録", new_user_registration_path %></li>
+  <li><%= link_to "ログイン", new_user_session_path %></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path , method: "delete" %></li>
+</ol>
