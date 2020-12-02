@@ -5,3 +5,6 @@
 <div id="messages">
   <%= render partial: 'messages/message', collection: @messages %>
 </div>
+
+<%= label_tag :content, 'コメントを入力' %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
