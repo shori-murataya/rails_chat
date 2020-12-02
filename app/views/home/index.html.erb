@@ -1,12 +1,13 @@
-<h1 class="test">Rails チャットアプリ</h1>
-<p>Home#index</p>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<%= link_to "チャットルーム", rooms_show_path %>
-
+<h1 class="test">Rails6 チャットアプリ</h1>
+<button type="button" class="btn btn-success enter-room">
+  <%= link_to "チャットルーム", rooms_show_path, class: "chat"%>
+</button>
 <ol>
-  <li><%= link_to "一覧", home_show_path %></li>
-  <li><%= link_to "登録", new_user_registration_path %></li>
-  <li><%= link_to "ログイン", new_user_session_path %></li>
-  <li><%= link_to "ログアウト", destroy_user_session_path , method: "delete" %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to "チャットメンバー", home_show_path %></li>
+    <li><%= link_to "ログアウト", destroy_user_session_path , method: "delete" %></li>
+  <% else %>
+    <li><%= link_to "登録", new_user_registration_path %></li>
+    <li><%= link_to "ログイン", new_user_session_path %></li>
+  <% end %>
 </ol>

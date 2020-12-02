@@ -1,10 +1,8 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
-
 <h1>チャットルーム</h1>
+<hr>
 <div id="js-messages">
   <%= render partial: 'messages/message', collection: @messages %>
 </div>
 
-<%= label_tag :content, 'コメントを入力' %>
+<%= label_tag :content, '入力' %>
 <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>

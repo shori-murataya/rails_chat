@@ -1,1 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
+
+.enter-room {
+  padding: 5px 20px;
+  margin: 30px;
+  .chat {
+    color: white;
+  }
+}
