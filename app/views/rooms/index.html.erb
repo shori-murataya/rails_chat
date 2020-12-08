@@ -9,18 +9,3 @@
     <li><%= link_to "ログイン", new_user_session_path %></li>
   <% end %>
 </ol>
-<div>
-  <% if user_signed_in? %>
-    <button><%= link_to '部屋作成', rooms_path, method: 'post' %></button>
-    <ul>
-      <% @rooms.each do |room| %>
-        <li>
-          <%= link_to "Room#{room.id}", room_path(room) %>
-          <% if room.room_master?(current_user) %>
-            <button><%= link_to "削除", room_path(room), method: "delete"%></button>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>

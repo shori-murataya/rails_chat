@@ -1,0 +1,25 @@
+<%= render partial: 'rooms/top' %>
+<h1><%= @user.name %></h1>
+<% unless @user.id == current_user.id%>
+  <%= form_with model: [@user,@room], local: true do |f| %>
+    <%= f.hidden_field :host_user_id, :value => @user.id%>
+    <%= f.label :room_name %>
+    <%= f.text_field :room_name %>
+    <%= f.submit 'ルーム作成' %>
+  <% end %>
+<% end %>
+
+<% if @user.id == current_user.id%>
+  <h6>作られた部屋</h2>
+  <% @my_rooms.each do |room| %>
+    <%= render partial: 'rooms/room_link', locals: { room: room, user: @user} %>
+  <% end %>
+<% else %>
+  <h6>作った部屋</h2>
+  <% @rooms.each do |room| %>
+    <%= render partial: 'rooms/room_link', locals: { room: room, user: @user}  %>
+  <% end %>
+<% end %>
+
+
+

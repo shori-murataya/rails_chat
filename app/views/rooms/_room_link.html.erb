@@ -1,0 +1,4 @@
+<p>
+  <%= link_to room.room_name, user_room_path(user,room) %>
+  <button><%= link_to '削除', user_room_path(user,room), method: 'delete' %></button>
+</p>
