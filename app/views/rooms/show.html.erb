@@ -1,5 +1,7 @@
 <%= render partial: 'rooms/top' %>
 <h1>チャットルーム</h1>
+<p>作成者：<%= @room.user.name %></p>
+<p>招待者：<%= @user.name %></p>
 <hr>
 <div id="js-messages" data-room_id="<%= @room.id %>">
   <%= render partial: 'messages/message', collection: @messages %>

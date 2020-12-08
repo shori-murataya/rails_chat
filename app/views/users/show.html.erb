@@ -2,7 +2,7 @@
 <h1><%= @user.name %></h1>
 <% unless @user.id == current_user.id%>
   <%= form_with model: [@user,@room], local: true do |f| %>
-    <%= f.hidden_field :host_user_id, :value => @user.id%>
+    <%= f.hidden_field :page_user_id, :value => @user.id%>
     <%= f.label :room_name %>
     <%= f.text_field :room_name %>
     <%= f.submit 'ルーム作成' %>
